@@ -1,0 +1,69 @@
+general {
+	output_format = i3bar
+        colors = true
+        interval = 1
+
+        color_good = "#04ff00"
+        color_degraded = "#ffee00"
+        color_bad = "#ff0000"
+
+        color_separator = "#00ffee"
+}
+
+order += "volume master"
+volume master {
+        format = "♪: %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+#######
+# BATTERY
+#######
+
+#######
+# LOAD
+#######
+order += "load"
+load {
+	format = "Load: %1min %5min %15min"
+#	max_threshold = 0.1
+#	format_above_threshold = "Warning: %1min %5min %15min"
+}
+
+#######
+# MEMORY
+#######
+order += "disk /"
+disk "/" {
+	format = "disk: (%avail)/ %total"
+}
+
+#######
+# CPU TEMPERATURE
+#######
+
+#######
+# FAN RPM
+#######
+
+#######
+# CPU USAGE
+#######
+order += "cpu_usage"
+cpu_usage {
+	format = "cpu: %usage"
+	max_threshold = 75
+	format_above_threshold = "High CPU: %usage"
+}
+
+#######
+# CLOCK
+#######
+order += "tztime local"
+tztime local {
+	format = "%Y-%m-%d %H:%M:%S"
+        timezone = "Europe/Berlin"
+}
