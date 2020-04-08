@@ -1,3 +1,8 @@
+########################
+# path & name: 
+# /home/jk/.config/i3/config
+########################
+
 # Set Mod key
 set $mod Mod4
 set $alt Mod1
